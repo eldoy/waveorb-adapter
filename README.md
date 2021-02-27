@@ -121,7 +121,7 @@ const result = await db('project').find({}, { fields: { name: false } })
 // Find all with 'level' field greater than 5
 const result = await db('project').find({ level: { $gt: 5 }})
 ```
-All of the [mongodb query operators](https://docs.mongodb.com/manual/reference/operator/query/) work.
+All of the [mongodb query operators](https://docs.mongodb.com/manual/reference/operator/query/) should work.
 
 **Get document**
 ```js
