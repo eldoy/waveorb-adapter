@@ -28,13 +28,13 @@ The functions can be async functions or regular functions. The `connection` func
 The id field in this specification should just be `id` and not `_id`. References to other collections and separators in general shuld be using an underscore and be lower case like in `project_id` and `created_at`.
 
 ### Integration
-If you have the following action in your application:
+Say you have the following action in your application:
 ```js
 // in /app/actions/project/find.js
 module.exports = {
   main: async function($) {
     const { query = {}, fields = {}, sort = {}, skip = 0, limit = 0 } = $.params
-    return await $.app.db('app').find(query, { fields, sort, skip, limit })
+    return await $.app.db('project').find(query, { fields, sort, skip, limit })
   }
 }
 ```
