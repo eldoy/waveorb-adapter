@@ -25,6 +25,32 @@ The adaptor should at least include these functions and properties:
 
 The functions can be async functions or regular functions. The `connection` function is usually used as a plugin, the rest of the database functions are used in corresponding Waveorb actions.
 
+### Integration
+If you have the following action in your application:
+```js
+// in /app/actions/project/find
+module.exports = {
+  main: async function($) {
+    const { query = {}, fields = {}, sort = {}, skip = 0, limit = 0 } = $.params
+    return await $.app.db('app').find(query, { fields, sort, skip, limit })
+  }
+}
+```
+Then you can do this in your db plugin to use different adaptors for development and production without changing your server code:
+```js
+// in /app/plugins/db.js
+const db = process.env.NODE_ENV == 'production'
+  ? require('configdb')
+  : require('mongowave')
+
+module.exports = async function(app) {
+  app.db = process.env.NODE_ENV == 'production'
+    ? await db(app.config.db)
+    : db
+}
+```
+This will use `configdb` in development and `mongowave` in production.
+
 ### Usage
 This example uses MongoWave as an example. If you want to write your own adaptor, clone this repository and use the tests, but change the content of the `index.js` file.
 
