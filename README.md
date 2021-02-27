@@ -25,6 +25,8 @@ The adaptor should at least include these functions and properties:
 
 The functions can be async functions or regular functions. The `connection` function is usually used as a plugin, the rest of the database functions are used in corresponding Waveorb actions.
 
+The id field in this specification should just be `id` and not `_id`. References to other collections and separators in general shuld be using an underscore and be lower case like in `project_id` and `created_at`.
+
 ### Integration
 If you have the following action in your application:
 ```js
