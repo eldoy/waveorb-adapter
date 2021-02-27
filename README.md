@@ -1,6 +1,6 @@
 # Waveorb database adapter specification
 
-This repository defines the Waveorb database adapter specification. It contains tests for writing adapters that are compatible with Waveorb generated actions. The idea is that you should be able to use the same code with different backends when writing your [Waveorb App](https://waveorb.com)
+This repository defines the Waveorb database adapter specification. It contains tests for writing adapters that are compatible with Waveorb generated actions. The idea is that you should be able to use the same code with different backends when writing your [Waveorb app.](https://waveorb.com)
 
 The API is based on the MongoDB API but not necessarily 100% compatible.
 
@@ -13,13 +13,13 @@ At the moment these adapters exist:
 
 The adaptor should at least include these functions and properties:
 
-* connection - function that returns a usable connection to the database
-* create - creates a new document and returns its id, takes a values object as parameter.
-* update - updates a document, takes query and values objects as parameters, returns the number of updated documents (updates multiple)
-* delete - deletes a document, takes a query parameter and returns the number of deleted documents (deletes multiple)
-* find - finds documents, takes a query parameter, returns an array of matching documents
-* get - get a single document, takes a query parameter, returns an object with first matching document or null
-* count - same options as find, but returns the number of matching documents
+* __connection__ - function that returns a usable connection to the database
+* __create__ - creates a new document and returns its id, takes a values object as parameter.
+* __update__ - updates a document, takes query and values objects as parameters, returns the number of updated documents (updates multiple)
+* __delete__ - deletes a document, takes a query parameter and returns the number of deleted documents (deletes multiple)
+* __find__ - finds documents, takes a query parameter, returns an array of matching documents
+* __get__ - get a single document, takes a query parameter, returns an object with first matching document or null
+* __count__ - same options as find, but returns the number of matching documents
 
 The functions can be async functions or regular functions. The `connection` function is usually used as a plugin, the rest of the database functions are used in Waveorb actions.
 
@@ -109,12 +109,7 @@ const result = await db('project').get({ name: 'bye' })
 const result = await db('project').count({ name: 'bye' })
 ```
 
-**Use the client base directly**
-```js
-db.base.collection('project').findOne({ _id: project._id })
-```
-
-**The mongodb client**
+**The database client**
 ```js
 db.client
 ```
