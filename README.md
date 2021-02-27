@@ -11,6 +11,8 @@ At the moment these adapters exist:
 * [WaveDB](https://github.com/eldoy/wavedb) - based on [LevelDB](https://github.com/Level/level)
 * [ConfigDB](https://github.com/eldoy/configdb) - human readable YAML DB for development.
 
+### API Interface
+
 The adaptor should at least include these functions and properties:
 
 * __connection__ - function that returns a usable connection to the database
