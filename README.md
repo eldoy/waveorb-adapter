@@ -9,7 +9,7 @@ At the moment these adapters exist:
 * [RunDB](https://github.com/eldoy/rundb) - based on [NeDB](https://github.com/louischatriot/nedb)
 * [MongoWave](https://github.com/eldoy/mongowave) - based on [MongoDB](https://mongodb.github.io/node-mongodb-native/)
 * [WaveDB](https://github.com/eldoy/wavedb) - based on [LevelDB](https://github.com/Level/level)
-* [ConfigDB](https://github.com/eldoy/configdb) - human readable YAML DB for development.
+* [ConfigDB](https://github.com/eldoy/configdb) - human readable YAML DB for development
 
 ### API Interface
 
