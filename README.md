@@ -27,7 +27,7 @@ The functions can be async functions or regular functions. The `connection` func
 
 The id field in this specification should just be `id` and not `_id`. References to other collections and separators in general shuld be using an underscore and be lower case like in `project_id` and `created_at`.
 
-### Integration
+### Usage
 Say you have the following action in your application:
 ```js
 // in /app/actions/project/find.js
@@ -53,7 +53,7 @@ module.exports = async function(app) {
 ```
 This will use `configdb` in development and `mongowave` in production.
 
-### Usage
+### Specification
 This example uses MongoWave as an example. If you want to write your own adaptor, clone this repository and use the tests, but change the content of the `index.js` file.
 
 You can actually run the tests out of the box to get you started:
