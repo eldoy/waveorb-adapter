@@ -28,7 +28,7 @@ The functions can be async functions or regular functions. The `connection` func
 ### Integration
 If you have the following action in your application:
 ```js
-// in /app/actions/project/find
+// in /app/actions/project/find.js
 module.exports = {
   main: async function($) {
     const { query = {}, fields = {}, sort = {}, skip = 0, limit = 0 } = $.params
