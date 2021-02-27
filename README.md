@@ -23,7 +23,7 @@ The adaptor should at least include these functions and properties:
 * __get__ - get a single document, takes a query parameter, returns an object with first matching document or null
 * __count__ - same options as find, but returns the number of matching documents
 
-The functions can be async functions or regular functions. The `connection` function is usually used as a plugin, the rest of the database functions are used in Waveorb actions.
+The functions can be async functions or regular functions. The `connection` function is usually used as a plugin, the rest of the database functions are used in corresponding Waveorb actions.
 
 ### Usage
 This example uses MongoWave as an example. If you want to write your own adaptor, clone this repository and use the tests, but change the content of the `index.js` file.
